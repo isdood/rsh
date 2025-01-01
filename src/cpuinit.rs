@@ -1,4 +1,4 @@
-// CPU initialization
+// src/cpuinit.rs
 use x86_64::structures::gdt::{GlobalDescriptorTable, Descriptor};
 use x86_64::structures::idt::{InterruptDescriptorTable, InterruptStackFrame};
 use lazy_static::lazy_static;
