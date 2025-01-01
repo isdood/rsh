@@ -1,7 +1,3 @@
-// src/main.rs
-mod rskernel;
-mod cpuinit;
-
 use std::env;
 use std::io::{self, Read, Write};
 use std::process::{Command, Stdio};
@@ -9,12 +5,6 @@ use std::os::unix::io::AsRawFd;
 use termios::*;
 
 fn main() {
-    // Initialize the CPU
-    cpuinit::init();
-
-    // Initialize the Kernel
-    rskernel::start_kernel();
-
     let stdin = 0; // stdin file descriptor
     let mut termios = Termios::from_fd(stdin).unwrap();
     let original_termios = termios.clone();
