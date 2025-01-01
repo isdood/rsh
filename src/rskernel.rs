@@ -2,12 +2,11 @@
 #![no_std]
 #![no_main]
 
-mod cpuinit;
-
 use core::panic::PanicInfo;
+use crate::cpuinit;
 
 #[no_mangle]
-pub extern "C" fn start_kernel() -> ! {
+pub extern "C" fn _start() -> ! {
     // Initialize the CPU
     cpuinit::init();
 
